@@ -2,6 +2,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
 
+# Define SQLAlchemy models for banks
 class Bank(db.Model):
     __tablename__ = 'banks'
     
@@ -12,7 +13,9 @@ class Bank(db.Model):
 
     def __repr__(self):
         return f'<Bank {self.name}>'
+    
 
+# Define SQLAlchemy models for branches
 class Branch(db.Model):
     __tablename__ = 'branches'
     
@@ -27,6 +30,7 @@ class Branch(db.Model):
     def __repr__(self):
         return f'<Branch {self.branch}>'
 
+# Define SQLAlchemy models for bank branches
 class BankBranch(db.Model):
     __tablename__ = 'bank_branches'
     

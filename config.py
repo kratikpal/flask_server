@@ -1,9 +1,10 @@
 import os
 
 class Config:
+    # Get the database URL from the environment variable, with a fallback default
     SQLALCHEMY_DATABASE_URI = os.getenv(
         'DATABASE_URL', 
-        'postgresql://my_database_0ijx_user:m19zfx2eFnMVnb4c21LXEd7SW9P3sOfX@dpg-ctdrngilqhvc73d8qemg-a.singapore-postgres.render.com/my_database_0ijx'
+        'postgresql://user:password@localhost/bank'  # Fallback if env variable not set
     )
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     DEBUG = True
